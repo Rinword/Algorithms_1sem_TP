@@ -18,10 +18,6 @@ bool CCoords::operator <( const CCoords& other) const
   return  ( atan2( x, y ) < atan2( other.x, other.y ) ||
           ( atan2( x, y ) == atan2( other.x, other.y ) && x < other.x ) ||
           ( atan2( x, y ) == atan2( other.x, other.y ) && x == other.x  && y < other.y));
-
-//  return  ( atan( x/y ) < atan( other.x/other.y ) ||
-//          ( atan( x/y ) == atan( other.x/other.y ) && x < other.x ) ||
-//          ( atan( x/y ) == atan( other.x/other.y ) && x == other.x  && y < other.y));
 }
 
 class CMyFunctor {

@@ -92,7 +92,6 @@ int Find_Inter_Count(vector < pair <int,int> > &App)
 
     // а если он полностью внутри текущего, то он лучше во всем
     // и раньше гарантировано нет из-за сортировки по возрастанию левой границы
-    //if ( leftBorder < App[i].first && rightBorder < App[i].second )
 
     if( leftBorder < App[i].first ) //если левая граница подвинулась (кончились интервалы с этого часа)
     {

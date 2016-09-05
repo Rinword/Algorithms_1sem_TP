@@ -43,7 +43,6 @@ CQueue::CQueue (int size):
   buffer = new int[buffersize]; //создание буфера
   for(int i = head; i < buffersize; i++ )
       buffer[i]=0;
-  //cout<<"Current buffer: "<<buffersize<<endl;
 }
 
 //добавление элемента (PushBack*)
@@ -55,7 +54,6 @@ void CQueue::Enqueue(int a)
     {
       grow();
     }
-  //assert( realSize < buffersize && buffer != 0);
     buffer[tail] = a;
     tail =  (tail+1)% buffersize ;
 
@@ -99,7 +97,6 @@ void CQueue::grow()
   delete[] buffer; //стираем старый
   buffer = newBuffer; //заправляем новый
   buffersize = newBufferSize;
-  //cout<<"Buffer was increaced by "<<newBufferSize<<endl;
 }
 
 void CQueue::Show()
@@ -108,7 +105,6 @@ void CQueue::Show()
    {
      cout<<i+1<<") "<<buffer[i]<<" ";
      if (head == i) cout<<" head ";
-     //else cout<<endl;
      if (tail == i+1) cout<<" tail ";
      cout<<endl;
    }
@@ -126,15 +122,12 @@ int main()
   for (int i=0;i<command_cnt;i++)
   {
     cin>>Curr_Command>>Curr_Data;
-    //cout<<"Comm: "<<Curr_Command<<" Data: "<<Curr_Data<<endl;
     switch (Curr_Command)
     {
     case 2://pop front извлечение из начала (head)
           if (QueueCurr.Dequeue() == Curr_Data) break; // запросили дату из head - все ок
           else
           {
-            //cout<<"[error] Wrong Data."; //вызываемая дата не совпала -косяк
-            //IsAllRight = false;
             cout<<"NO";
             return 0;
             break;
@@ -147,8 +140,6 @@ int main()
     default: {cout<<"NO";}
     }
     QueueCurr.Show();
-//    if (IsAllRight) cout<<"YES ";
-//    else cout<<"NO ";
   }
   cout<<"YES";
   return 0;

@@ -87,13 +87,6 @@ vector<element> InFixStirng_to_PostFixVector(string Str)
     {
       CurrNum.push_back(Str[i]); //иначе это цифра и запишем ее в буфер будущего числа, пока не встретится операция
     }
-      //отладочный вывод
-  //    cout<<i<<") Data: "<<CurrElem.data<<" Type: "<<CurrElem.type<<endl;
-  //    cout<<"Out: ";
-  //    ShowPostFix(PostFixVector);
-  //    cout<<"Opers: ";
-  //    ShowOpers(CurrentOperand);
-  //    cout<<endl;
   }
 
     //костыль, для корректного считывания последнего операнда он не зайдет в начальный перевод
@@ -216,7 +209,6 @@ int CalculatePostFixVector(vector<element> PostFixVector)
       Buffer.push(CurrElem); //записываем результат обратно в стек
     }
   }
-  //cout<<Buffer.top().data;
   return Buffer.top().data;
 }
 
@@ -255,7 +247,6 @@ void ShowPostFix(vector<element> PostFixVector)
         cout<<PostFixVector[i].type<<" ";
       }
     }
-    //cout<<" >>";
     cout<<endl;
 }
 

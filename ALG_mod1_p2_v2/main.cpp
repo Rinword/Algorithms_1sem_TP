@@ -17,7 +17,6 @@ struct Coord
 
 double NArea( Coord *NAng, int n )
 {
-  //Coord* MidEval = new Coord [n];
   Coord* MidEval = new Coord[n];
   for( int i = 0; i <n ; i++ )
   {
